@@ -27,7 +27,7 @@ function onSubmit(evt) {
         data => {
             const photosMarkup = createCardMarkup(data);
             clearArticleContainer();
-            moreBtnPresence();
+            moreBtnPresence(data);
             refs.galleryContainer.insertAdjacentHTML('beforeend', photosMarkup);
         }
     ).catch(onError);
@@ -68,8 +68,11 @@ function clearArticleContainer() {
     refs.galleryContainer.innerHTML = '';
 }
 
-function moreBtnPresence() {
-    if (apiService.page > 1) {
+function moreBtnPresence(data) {
+    //console.log('data.lenth', data.length);
+    if ((data.length >= 12)) {
         refs.loadMoreBtn.classList.remove('is-hidden');
+    } else {
+        refs.loadMoreBtn.classList.add('is-hidden');
     }
 }

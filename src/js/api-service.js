@@ -14,8 +14,6 @@ export default class ApiService {
         return fetch(url)
             .then(responce => {
                 if (responce.status === 200) {
-                    console.log('responce.status', responce.status);
-                    //console.log('responce.json()', responce.json());
                     return responce.json();
                 }
                 throw new Error('Error: data not fetched!');
