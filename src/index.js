@@ -1,7 +1,6 @@
 import './sass/main.scss';
 var debounce = require('lodash.debounce');
 import templatePhotoCard from './templates/photo-card.hbs';
-import templateCountryList from './templates/country-drop-list.hbs';
 import getRefs from './js/get-refs';
 import ApiService from './js/api-service';
 
